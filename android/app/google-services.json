@@ -1,63 +1,41 @@
 {
   "project_info": {
-    "project_number": "457493876682",
-    "project_id": "todoapp-18aa4",
-    "storage_bucket": "todoapp-18aa4.appspot.com"
+    "project_number": "213863618170",
+    "project_id": "todoapp-3f863",
+    "storage_bucket": "todoapp-3f863.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:457493876682:android:3d6915f0818fb86c0d4933",
-        "android_client_info": {
-          "package_name": "com.example.todo_app_cubit"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "457493876682-91dpln175rbh0a14810qjjs3gtjuhupa.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBw3i6Z2cBmzaWCupChWU7vOUCqNvIqvTo"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "457493876682-91dpln175rbh0a14810qjjs3gtjuhupa.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:457493876682:android:7dcd650ffd51a8b00d4933",
+        "mobilesdk_app_id": "1:213863618170:android:c57ce101ad56e0418c8dc3",
         "android_client_info": {
           "package_name": "com.example.todoapp_firebase"
         }
       },
       "oauth_client": [
         {
-          "client_id": "457493876682-91dpln175rbh0a14810qjjs3gtjuhupa.apps.googleusercontent.com",
+          "client_id": "213863618170-oprlmbfl1khbhe3tf02hokcko2uv5p26.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBw3i6Z2cBmzaWCupChWU7vOUCqNvIqvTo"
+          "current_key": "AIzaSyDr1AwRjJdoLSs7kioWe6DrhB79s_7H-_k"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "457493876682-91dpln175rbh0a14810qjjs3gtjuhupa.apps.googleusercontent.com",
+              "client_id": "213863618170-oprlmbfl1khbhe3tf02hokcko2uv5p26.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "213863618170-geprckq9or22nj6n9aul61fs9rv5ln23.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.todoappFirebase"
+              }
             }
           ]
         }

@@ -1,12 +1,15 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:todoapp_firebase/page/todo_list_page.dart';
 import 'package:todoapp_firebase/repository/todo_repository.dart';
 
 import 'cubit/todo_cubit.dart';
+import 'notification/firbase_notification.dart';
 
-void main() async{
+
+Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp();
@@ -47,8 +50,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<TodoCubit>(
-        create:(context)=>TodoCubit(DataBase()),
-        child:  const TodoListPage()
+        create:(context)=>TodoCubit(DataBase(),PushNotification()),
+        child:   TodoListPage()
     );
 
   }

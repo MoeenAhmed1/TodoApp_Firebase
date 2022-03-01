@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:todoapp_firebase/cubit/todo_cubit.dart';
+import 'package:todoapp_firebase/main.dart';
+import 'package:todoapp_firebase/notification/firbase_notification.dart';
 import 'package:todoapp_firebase/repository/todo_repository.dart';
 import 'package:todoapp_firebase/model/todo_model.dart';
 class TodoFormPage extends StatefulWidget {
 
   final int index;
-  const TodoFormPage(this.index, {Key? key}) : super(key: key);
+  const TodoFormPage(this.index,{Key? key}) : super(key: key);
 
   @override
   _TodoFormPageState createState() => _TodoFormPageState();
@@ -47,7 +50,7 @@ class _TodoFormPageState extends State<TodoFormPage> {
             onPressed:(){
 
               Todo todo=Todo(titleController.text,descController.text);
-              final cubit=TodoCubit(repo);
+              final cubit=TodoCubit(repo,PushNotification());
               if(widget.index!=-1){
                 cubit.addSubTodo(todo, widget.index);
                 Navigator.pop(context);

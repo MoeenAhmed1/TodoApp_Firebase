@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:todoapp_firebase/cubit/todo_cubit.dart';
 import 'package:todoapp_firebase/model/todo_model.dart';
+import 'package:todoapp_firebase/notification/firbase_notification.dart';
 import 'package:todoapp_firebase/page/todo_form_page.dart';
 import 'package:todoapp_firebase/repository/todo_repository.dart';
 class SubTodoListPage extends StatefulWidget {
   final int mainIndex;
   final String description;
   final String title;
+
    const SubTodoListPage(this.mainIndex,this.title,this.description,{Key? key}) : super(key: key);
 
   @override
@@ -18,7 +21,7 @@ class _SubTodoListPageState extends State<SubTodoListPage> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-    create: (context)=>TodoCubit(DataBase()),
+    create: (context)=>TodoCubit(DataBase(),PushNotification()),
     child: SubTodo(widget.mainIndex,widget.title,widget.description)
     );
   }
@@ -27,6 +30,7 @@ class SubTodo extends StatelessWidget {
   final int mainIndex;
   final String description;
   final String title;
+
   const SubTodo(this.mainIndex,this.title,this.description,{Key? key}) : super(key: key);
 
   @override
@@ -153,7 +157,7 @@ class SubTodo extends StatelessWidget {
                 child: Text('Add'),
                 onPressed: () {
                   Todo todo=Todo(_titleController.text,_descController.text);
-                  final cubit=TodoCubit(DataBase());
+                  final cubit=TodoCubit(DataBase(),PushNotification());
                   cubit.updateSubTodo(mainIndex, todo, id);
                   Navigator.pop(context);
                 },
